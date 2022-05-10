@@ -38,8 +38,8 @@ func searchHandler(w http.ResponseWriter, r *http.Request) {
     }
 
     if err != nil {
-        http.Error(w, "Failed to read post from backend", http.StatusInternalServerError)
-        fmt.Printf("Failed to read post from backend %v.\n", err)
+        http.Error(w, "Failed to read post from Elasticsearch", http.StatusInternalServerError)
+        fmt.Printf("Failed to read post from Elasticsearch %v.\n", err)
         return
     }
 
@@ -49,5 +49,7 @@ func searchHandler(w http.ResponseWriter, r *http.Request) {
         fmt.Printf("Failed to parse posts into JSON format %v.\n", err)
         return
     }
+
+    w.Header().Set("Content-Type", "application/json")  // tell frontend what kind of format data you want
     w.Write(js)
 }

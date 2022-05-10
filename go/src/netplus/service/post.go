@@ -22,6 +22,7 @@ func SearchPostsByUser(user string) ([]model.Post, error) {
 func SearchPostsByKeywords(keywords string) ([]model.Post, error) {
     query := elastic.NewMatchQuery("message", keywords)
     query.Operator("AND")
+
     if keywords == "" {
         query.ZeroTermsQuery("all")
     }
