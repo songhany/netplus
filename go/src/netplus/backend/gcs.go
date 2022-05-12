@@ -55,3 +55,4 @@ func (backend *GoogleCloudStorageBackend) SaveToGCS(r io.Reader, objectName stri
     fmt.Printf("File is saved to GCS: %s\n", attrs.MediaLink)
     return attrs.MediaLink, nil
 }
+
