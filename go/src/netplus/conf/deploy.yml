@@ -1,0 +1,10 @@
+elasticsearch:
+  address: "http://localhost:9200/"
+  username: ""
+  password: ""
+
+gcs:
+  bucket: ""
+
+token:
+  secret: "secret"
