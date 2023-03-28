@@ -19,7 +19,7 @@ const Register = ({ history }) => {
 				message.success('Registration succeed!');
 				history.push('/login');
 			})
-			.catct(err => message.error('Registration failed!'));
+			.catch(err => message.error('Registration failed!'));
 	};
 
 	return (
